@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbtnil3jeiai1"]
+[gd_scene load_steps=4 format=3 uid="uid://cbtnil3jeiai1"]
+
+[ext_resource type="Script" path="res://crate/crate.gd" id="1_dsymq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6lo2"]
-size = Vector2(40, 40)
+size = Vector2(40, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt61u"]
+size = Vector2(40, 5)
 
 [node name="Crate" type="Node2D"]
 
@@ -11,12 +16,18 @@ collision_layer = 2
 collision_mask = 49155
 can_sleep = false
 lock_rotation = true
+script = ExtResource("1_dsymq")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.984314, 0, 0.0117647, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(20, 20)
+[node name="Collision1" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(20, 17.5)
 shape = SubResource("RectangleShape2D_i6lo2")
+
+[node name="Collision2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(20, 37.5)
+shape = SubResource("RectangleShape2D_kt61u")
+debug_color = Color(0.501961, 0.576471, 0.203922, 0.419608)
