@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="Stacking Game"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Objects"
+2d_physics/layer_15="Ground"
+2d_physics/layer_16="Walls"
 
 [rendering]
 
