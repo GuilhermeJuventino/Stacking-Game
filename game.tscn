@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0qvonxo48qr0"]
+[gd_scene load_steps=5 format=3 uid="uid://c0qvonxo48qr0"]
 
 [ext_resource type="PackedScene" uid="uid://bx533o0qll1ur" path="res://player/player.tscn" id="1_gk30e"]
+[ext_resource type="PackedScene" uid="uid://cbtnil3jeiai1" path="res://crate/crate.tscn" id="2_58s10"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhb1m"]
 size = Vector2(1154, 56)
@@ -12,6 +13,9 @@ size = Vector2(18, 658)
 
 [node name="Player" parent="." instance=ExtResource("1_gk30e")]
 position = Vector2(552, 552)
+
+[node name="Crate" parent="." instance=ExtResource("2_58s10")]
+position = Vector2(560, 16)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 608)
