@@ -10,27 +10,24 @@ size = Vector2(40, 5)
 
 [node name="Crate" type="Node2D"]
 
-[node name="CrateBody" type="RigidBody2D" parent="."]
-position = Vector2(-20, -20)
+[node name="CrateBody" type="CharacterBody2D" parent="."]
 collision_layer = 2
 collision_mask = 49155
-contact_monitor = true
-can_sleep = false
-lock_rotation = true
-freeze_mode = 1
 script = ExtResource("1_dsymq")
 
 [node name="ColorRect" type="ColorRect" parent="CrateBody"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 color = Color(0.984314, 0, 0.0117647, 1)
 
 [node name="Collision1" type="CollisionShape2D" parent="CrateBody"]
-position = Vector2(20, 17.5)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_i6lo2")
 
 [node name="CrateBottom" type="Area2D" parent="CrateBody"]
-position = Vector2(0, 35)
+position = Vector2(-20, 15)
 
 [node name="Collision2" type="CollisionShape2D" parent="CrateBody/CrateBottom"]
 position = Vector2(20, 2.5)

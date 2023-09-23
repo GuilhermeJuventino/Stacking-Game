@@ -1,26 +1,25 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 var stacked: bool = false
 
 @onready var collision_2: CollisionShape2D = $CrateBottom/Collision2
+@onready var player = get_parent().get_parent().get_node("Player/PlayerBody")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	#var bodies = get_colliding_bodies()
-	pass
+	if !stacked:
+		velocity.y += gravity * delta
+	
+	move_and_slide()
 	
 func stack():
 	print("Stack() was called")
 	
 	Game.crates.append(self)
 	stacked = true
-	sleeping = true
-	set_freeze_enabled(sleeping)
-
 
 func _on_crate_bottom_body_entered(_body):
 	if !stacked:
