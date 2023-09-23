@@ -12,7 +12,7 @@ func _physics_process(delta):
 	#var bodies = get_colliding_bodies()
 	if !stacked:
 		velocity.y += gravity * delta
-	
+		
 	move_and_slide()
 	
 func stack():

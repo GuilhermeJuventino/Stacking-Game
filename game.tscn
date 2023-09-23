@@ -19,6 +19,9 @@ position = Vector2(552, 552)
 [node name="Crate" parent="." instance=ExtResource("2_58s10")]
 position = Vector2(560, 16)
 
+[node name="Crate2" parent="." instance=ExtResource("2_58s10")]
+position = Vector2(584, -232)
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 608)
 collision_layer = 16384

@@ -28,6 +28,8 @@ shape = SubResource("RectangleShape2D_i6lo2")
 
 [node name="CrateBottom" type="Area2D" parent="CrateBody"]
 position = Vector2(-20, 15)
+collision_layer = 2
+collision_mask = 49155
 
 [node name="Collision2" type="CollisionShape2D" parent="CrateBody/CrateBottom"]
 position = Vector2(20, 2.5)
