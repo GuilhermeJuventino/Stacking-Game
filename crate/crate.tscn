@@ -10,24 +10,31 @@ size = Vector2(40, 5)
 
 [node name="Crate" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="CrateBody" type="RigidBody2D" parent="."]
 position = Vector2(-20, -20)
 collision_layer = 2
 collision_mask = 49155
+contact_monitor = true
 can_sleep = false
 lock_rotation = true
+freeze_mode = 1
 script = ExtResource("1_dsymq")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+[node name="ColorRect" type="ColorRect" parent="CrateBody"]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.984314, 0, 0.0117647, 1)
 
-[node name="Collision1" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="Collision1" type="CollisionShape2D" parent="CrateBody"]
 position = Vector2(20, 17.5)
 shape = SubResource("RectangleShape2D_i6lo2")
 
-[node name="Collision2" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(20, 37.5)
+[node name="CrateBottom" type="Area2D" parent="CrateBody"]
+position = Vector2(0, 35)
+
+[node name="Collision2" type="CollisionShape2D" parent="CrateBody/CrateBottom"]
+position = Vector2(20, 2.5)
 shape = SubResource("RectangleShape2D_kt61u")
 debug_color = Color(0.501961, 0.576471, 0.203922, 0.419608)
+
+[connection signal="body_entered" from="CrateBody/CrateBottom" to="CrateBody" method="_on_crate_bottom_body_entered"]

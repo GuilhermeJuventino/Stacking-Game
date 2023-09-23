@@ -10,21 +10,24 @@ size = Vector2(154, 4)
 
 [node name="Player" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="PlayerBody" type="CharacterBody2D" parent="."]
 position = Vector2(-77, -13)
 collision_mask = 49152
 script = ExtResource("1_ts87h")
 
-[node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
+[node name="ColorRect" type="ColorRect" parent="PlayerBody"]
 offset_right = 154.0
 offset_bottom = 26.0
 color = Color(0.552941, 0.941176, 0.517647, 1)
 
-[node name="Collision1" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Collision1" type="CollisionShape2D" parent="PlayerBody"]
 position = Vector2(77, 15)
 shape = SubResource("RectangleShape2D_dpl6w")
 
-[node name="Collision2" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="PlayerTop" type="Area2D" parent="PlayerBody"]
+collision_mask = 49152
+
+[node name="Collision2" type="CollisionShape2D" parent="PlayerBody/PlayerTop"]
 position = Vector2(77, 2)
 shape = SubResource("RectangleShape2D_6g10j")
 debug_color = Color(0.760784, 0.45098, 0.0745098, 0.419608)
